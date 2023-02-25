@@ -24,7 +24,7 @@ TestNG is a testing framework for Java that is designed to be more flexible and 
 - Hit the following command into the terminal:
  ```gradle clean test```
  
-- For generating Report in Allure hit:
+- For generating Allure Report use these commands:
 ```allure generate allure-results --clean -o allure-report``` and
 ```allure serve allure-results```
 
@@ -41,7 +41,21 @@ TestNG is a testing framework for Java that is designed to be more flexible and 
 - Click on contact details and input address and email
 - Logout the user
 
-## Test  based on Scenerio:
+## Test case check list based on the Scenerio:
+
+- Admin Login with Invalid credtionals. 
+- Admin Login with valid creditionals.
+- Create employee without username.
+- Create first employee.
+- create second employee.
+- Search existing employee with invalid name.
+- Search employee with valid name.
+- Update employee Id by random Id.
+- Search employee again with updated employee id.
+- Logout Admin.
+- Login second user with valid credtionals. 
+- Insert the second user's Gender, Blood, Address and email. 
+- Logout second user. 
 
 ## Allure Report:
 
