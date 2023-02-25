@@ -1,0 +1,12 @@
+<suite thread-count="1" verbose="1" name="Orange HRM Portal Automation">
+    <test name="Employee page test">
+        <classes>
+            <class name="testrunner.PIMTestRunner"/>
+        </classes>
+    </test>
+    <test name="Login with second user page test">
+        <classes>
+            <class name="testrunner.SecondUserTestRunner"/>
+        </classes>
+    </test>
+</suite>
