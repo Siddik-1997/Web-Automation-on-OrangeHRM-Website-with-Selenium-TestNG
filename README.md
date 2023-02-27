@@ -43,8 +43,8 @@ TestNG is a testing framework for Java that is designed to be more flexible and 
 
 ## Test case check list based on the Scenerio:
 
-- Admin Login with Invalid credtionals. 
-- Admin Login with valid creditionals.
+- Admin Login with Invalid credential. 
+- Admin Login with valid credential.
 - Create employee without username.
 - Create first employee.
 - create second employee.
@@ -53,7 +53,7 @@ TestNG is a testing framework for Java that is designed to be more flexible and 
 - Update employee Id by random Id.
 - Search employee again with updated employee id.
 - Logout Admin.
-- Login second user with valid credtionals. 
+- Login second user with valid credential. 
 - Insert the second user's Gender, Blood, Address and email. 
 - Logout second user. 
 
