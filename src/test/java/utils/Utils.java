@@ -38,7 +38,7 @@ public class Utils {
     }
 
     public static void main(String[] args) throws IOException, ParseException {
-        JSONObject userObject = Utils.loadJSONFile("./src/test/resources/User.json");
+        JSONObject userObject = Utils.loadJSONFile("./src/test/resources/Admin.json");
 
         String username = (String) userObject.get("username");
         String password = (String) userObject.get("password");
@@ -58,7 +58,7 @@ public class Utils {
     }
 
     public static void addJsonArray(String firstName, String lastName, String employeeId, String username, String password) throws IOException, ParseException {
-        String fileName = "./src/test/resources/NewUsers.json";
+        String fileName = "./src/test/resources/Employee.json";
         JSONParser jsonParser = new JSONParser();
         Object obj = jsonParser.parse(new FileReader(fileName));
         JSONObject userObj = new JSONObject();

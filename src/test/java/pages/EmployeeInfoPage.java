@@ -9,7 +9,7 @@ import utils.Utils;
 
 import java.util.List;
 
-public class UserInfoPage {
+public class EmployeeInfoPage {
     @FindBy(className = "oxd-main-menu-item")
     public List<WebElement> userMenu;
     @FindBy(className = "oxd-radio-input")
@@ -24,7 +24,7 @@ public class UserInfoPage {
     public WebElement dropdownCountry;
     @FindBy(css = "[type=submit]")
     public List<WebElement> Submit;
-    public UserInfoPage(WebDriver driver) {
+    public EmployeeInfoPage(WebDriver driver) {
 
         PageFactory.initElements(driver, this);
     }

@@ -8,21 +8,21 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
 import pages.LoginPage;
-import pages.UserInfoPage;
+import pages.EmployeeInfoPage;
 import setup.Setup;
 import utils.Utils;
 
 import java.io.IOException;
 
-public class SecondUserTestRunner extends Setup {
+public class EmployeeTestRunner extends Setup {
     DashboardPage dashboardPage;
     LoginPage loginPage;
-    UserInfoPage userInfoPage;
+    EmployeeInfoPage employeeInfoPage;
     @Test(priority = 1, description = "Login With Second User")
     public void doLoginWithSecondUsers() throws IOException, ParseException, InterruptedException {
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
-        JSONObject userObject = Utils.loadJSONFileContainingArray("./src/test/resources/NewUsers.json", 1);
+        JSONObject userObject = Utils.loadJSONFileContainingArray("./src/test/resources/Employee.json", 1);
         String username = userObject.get("username").toString();
         String password = userObject.get("password").toString();
         loginPage.doLogin(username, password);
@@ -38,16 +38,16 @@ public class SecondUserTestRunner extends Setup {
     }
     @Test(priority = 2, description = "Insert second user's Gender, Blood Type, Address and Email ")
     public void updateUserInformation() throws IOException, ParseException, InterruptedException {
-        userInfoPage=new UserInfoPage(driver);
-        userInfoPage.userMenu.get(2).click();
+        employeeInfoPage=new EmployeeInfoPage(driver);
+        employeeInfoPage.userMenu.get(2).click();
         Utils.doScroll(driver,500);
-        userInfoPage.selectGender();
+        employeeInfoPage.selectGender();
         Thread.sleep(1000);
         Utils.doScroll(driver,500);
-        userInfoPage.selectBloodType();
+        employeeInfoPage.selectBloodType();
         Thread.sleep(1000);
         driver.navigate().refresh();
-        userInfoPage.selectContact();
+        employeeInfoPage.selectContact();
         Thread.sleep(1000);
 
         // Assertion

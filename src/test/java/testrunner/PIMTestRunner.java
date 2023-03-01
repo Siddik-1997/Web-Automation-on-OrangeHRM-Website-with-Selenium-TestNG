@@ -37,7 +37,7 @@ public class PIMTestRunner extends Setup {
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
         String username, password;
-        JSONObject userObject = Utils.loadJSONFile("./src/test/resources/User.json");
+        JSONObject userObject = Utils.loadJSONFile("./src/test/resources/Admin.json");
         if (System.getProperty("username") != null && System.getProperty("password") != null) {
             username = System.getProperty("username");
             password = System.getProperty("password");
@@ -148,7 +148,7 @@ public class PIMTestRunner extends Setup {
     @Test(priority = 7, description = "Searching with Valid Employee's name")
     public void searchEmployeeByName() throws IOException, ParseException, InterruptedException {
         loginPage = new LoginPage(driver);
-        JSONObject userObject = Utils.loadJSONFileContainingArray("./src/test/resources/NewUsers.json", 0);
+        JSONObject userObject = Utils.loadJSONFileContainingArray("./src/test/resources/Employee.json", 0);
         String employeeFirstName = userObject.get("firstname").toString();
         String employeeLastName=userObject.get("lastname").toString();
         String employeeName=employeeFirstName + " " + employeeLastName;
@@ -169,7 +169,7 @@ public class PIMTestRunner extends Setup {
         pimPage = new PIMPage(driver);
         int empId = Utils.generateRandomNumber(10000, 99999);
         String randomEmployeeId = String.valueOf(empId);
-        Utils.updateJSONObject("./src/test/resources/NewUsers.json", "employeeId", randomEmployeeId,0 );
+        Utils.updateJSONObject("./src/test/resources/Employee.json", "employeeId", randomEmployeeId,0 );
         Utils.doScroll(driver,300);
         pimPage.updateEmployeeById(randomEmployeeId);
         Thread.sleep(1500);
@@ -184,7 +184,7 @@ public class PIMTestRunner extends Setup {
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
         dashboardPage.menus.get(1).click();
-        JSONObject userObject = Utils.loadJSONFileContainingArray("./src/test/resources/NewUsers.json", 0);
+        JSONObject userObject = Utils.loadJSONFileContainingArray("./src/test/resources/Employee.json", 0);
         String employeeId = userObject.get("employeeId").toString();
         pimPage.SearchEmployeeByValidId(employeeId);
         Thread.sleep(1500);

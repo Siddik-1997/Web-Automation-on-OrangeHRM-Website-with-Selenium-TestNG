@@ -6,7 +6,7 @@
     </test>
     <test name="Login with second user page test">
         <classes>
-            <class name="testrunner.SecondUserTestRunner"/>
+            <class name="testrunner.EmployeeTestRunner"/>
         </classes>
     </test>
 </suite>
